@@ -1,5 +1,6 @@
 <ul>
-  <li ng-repeat="category in $ctrl.categories" ui-sref="categoryList.categoryDetail({categoryId: $index})">
-    {{ category.name }}: {{ category.special_instructions}}
+  <li ng-repeat="category in $ctrl.categoriesList" ui-sref="categories.items({categoryId: $index})">
+    {{ category.name }}
+    <p class='description' ng-if='category.special_instructions'> {{ category.special_instructions}} </p>
   </li>
 </ul>

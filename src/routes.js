@@ -16,10 +16,17 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: 'src/home/home.template.html'
     })
-
+    
+    // Fetched categories should be required before transitioning to view
     .state('categories', {
       url: '/categories',
-      templateUrl: 'src/categories/categories.template.html'
+      templateUrl: 'src/categories/categoryList.template.html',
+      controller: 'CategoriesController as categoriesCtrl',
+      resolve: {
+        categories: ['MenuDataService', function(MenuDataService){
+          return MenuDataService.getAllCategories();
+        }]
+      }
     })
 
 }
