@@ -24,7 +24,9 @@ function MenuDataService($http, ApiBasePath){
       url: (ApiBasePath + "/menu_items.json?category=" + categoryShortName)
     };
 
-    return $http(httpParams);
+    return $http(httpParams).then(function(response){
+      return response.data.menu_items;
+    });
   };
 }
 })();
