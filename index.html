@@ -11,10 +11,12 @@
     <!-- Modules -->
     <script src="src/menuapp.module.js"></script>
     <script src="src/data.module.js"></script>
+    <script src="src/spinner/spinner.module.js"></script>
 
     <!-- Components -->
     <script src="src/categories/categories.component.js"></script>
     <script src="src/items/items.component.js"></script>
+    <script src="src/spinner/loadingspinner.component.js"></script>
 
     <!-- Services -->
     <script src="src/categories/menudata.service.js"></script>
@@ -30,6 +32,8 @@
   </head>
   <body>
     <h1>Welcome to our Restaurant!</h1>
+    <loading-spinner></loading-spinner>
+    <br>
 
     <ui-view></ui-view>
 
