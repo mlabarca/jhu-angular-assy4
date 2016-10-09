@@ -3,5 +3,9 @@ body {
 }
 
 p.description{
-  font-size: 0.7em;
+  font-size: 0.9em;
+}
+
+div.category{
+  min-height: 140px;
 }

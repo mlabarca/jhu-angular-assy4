@@ -2,6 +2,7 @@
 <html ng-app='MenuApp'>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Libraries -->
@@ -31,11 +32,13 @@
     <title>Menu App</title>
   </head>
   <body>
-    <h1>Welcome to our Restaurant!</h1>
-    <loading-spinner></loading-spinner>
-    <br>
-
-    <ui-view></ui-view>
-
+    <div class='container'>
+      <div class="row">
+        <h1>Welcome to our Restaurant!</h1>
+        <loading-spinner></loading-spinner>
+        <br>
+        <ui-view></ui-view>
+      </div>
+    </div>
   </body>
 </html>
