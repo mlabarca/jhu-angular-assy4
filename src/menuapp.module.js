@@ -3,6 +3,7 @@
 angular.module('MenuApp',['ui.router', 'data']);
 
 angular.module('MenuApp')
+.constant('ApiBasePath', "https://davids-restaurant.herokuapp.com")
 .config(RoutesConfig);
 
 RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
