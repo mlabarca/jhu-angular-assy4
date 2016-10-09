@@ -7,27 +7,22 @@ angular.module('data')
 MenuDataService.$inject = ['$http', 'ApiBasePath'];
 function MenuDataService($http, ApiBasePath){
   var service = this;
-  service.getAllCategories = function (searchTerm){
-      var httpParams = {
-        method: "GET",
-        url: (ApiBasePath + "/menu_items.json")
-      };
+  service.getAllCategories = function (){
+    var httpParams = {
+      method: "GET",
+      url: (ApiBasePath + "/categories.json")
+    };
 
-      return $http(httpParams).then(function (response) {
-        var menuItems = response.data.menu_items;
+    return $http(httpParams);
+  };
 
-        // process result and only keep items that match
-        var foundItems = [];
-        for(var index = 0; index < menuItems.length; index++){
-          if(menuItems[index].description.indexOf(searchTerm) != -1){
-            foundItems.push(menuItems[index]);
-          }
-        }
+  service.getItemsForCategory = function (categoryShortName){
+    var httpParams = {
+      method: "GET",
+      url: (ApiBasePath + "/menu_items.json?category=" + categoryShortName)
+    };
 
-        // return processed items
-        return foundItems;
-      });
-    });
+    return $http(httpParams);
   };
 }
 })();
